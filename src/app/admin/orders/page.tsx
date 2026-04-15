@@ -45,8 +45,9 @@ export default function AdminOrdersPage() {
       return;
     }
 
-    setOrders(data || []);
-    calculateProductSales(data || []);
+    const ordersData = (data || []) as Order[];
+    setOrders(ordersData);
+    calculateProductSales(ordersData);
     setLoading(false);
   }
 
