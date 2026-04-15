@@ -29,6 +29,9 @@ export default function AdminHeader() {
           Admin
         </Link>
         <nav className="flex flex-wrap items-center gap-2 text-sm sm:justify-end">
+          <Link href="/admin/orders" className="btn-ghost">
+            Orders
+          </Link>
           <Link href="/admin/products" className="btn-ghost">
             Products
           </Link>
