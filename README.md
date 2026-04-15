@@ -1,6 +1,9 @@
-﻿# SCENTS FOR CENTS
+﻿﻿# SCENTS FOR CENTS
 
 Production-ready MVP storefront for SCENTS FOR CENTS with WhatsApp ordering and optional Supabase order storage.
+
+## 🌐 Live Demo
+https://scents-wine.vercel.app/
 
 ## Features
 - Product browsing with categories
@@ -41,6 +44,7 @@ NEXT_PUBLIC_WHATSAPP_NUMBER=2547XXXXXXXX
 NEXT_PUBLIC_SAVE_ORDERS=true
 ```
 
+
 Notes:
 - `NEXT_PUBLIC_WHATSAPP_NUMBER` should be digits only, include country code.
 - Set `NEXT_PUBLIC_SAVE_ORDERS=false` if you do not want to insert orders into Supabase.
@@ -50,6 +54,7 @@ Notes:
 npm install
 npm run dev
 ```
+
 
 ### 7) Deploy to Vercel
 - Import the repo in Vercel
@@ -70,5 +75,4 @@ npm run dev
 ## Notes
 - Guest shopping only, no customer login.
 - Orders are placed via WhatsApp and optionally stored in Supabase.
-
 
