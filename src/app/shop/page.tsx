@@ -16,7 +16,7 @@ export default async function ShopPage() {
   const { data: products } = await supabase
     .from("products")
     .select("*")
-    .eq("in_stock", true)
+    .order("in_stock", { ascending: false })
     .order("created_at", { ascending: false });
 
   return (
