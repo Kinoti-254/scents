@@ -14,10 +14,10 @@ export default async function ShopPage() {
     .order("name", { ascending: true });
 
   const { data: products } = await supabase
-    .from("products")
-    .select("*")
-    .eq("in_stock", true)
-    .order("created_at", { ascending: false });
+  .from("products")
+  .select("*")
+  .order("in_stock", { ascending: false })
+  .order("created_at", { ascending: false });
 
   return (
     <ShopClient categories={categories ?? []} products={products ?? []} />

@@ -12,11 +12,11 @@ export default async function HomePage() {
   }
 
   const { data: products } = await supabase
-    .from("products")
-    .select("*")
-    .eq("in_stock", true)
-    .order("created_at", { ascending: false })
-    .limit(4);
+  .from("products")
+  .select("*")
+  .order("in_stock", { ascending: false })
+  .order("created_at", { ascending: false })
+  .limit(4);
 
   return (
     <div className="space-y-14">
