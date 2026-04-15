@@ -1,0 +1,184 @@
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --brand-primary: #1f6b4f;
+  --brand-primary-strong: #16503b;
+  --brand-primary-soft: #dcefe6;
+  --brand-accent: #c7a14a;
+  --brand-accent-soft: #f4ead2;
+}
+
+body {
+  @apply bg-cream text-slate-900 antialiased;
+}
+
+@layer components {
+.btn-primary {
+    @apply inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold text-white shadow-soft transition;
+    background-color: var(--brand-primary);
+  }
+  .btn-primary:hover {
+    background-color: var(--brand-primary-strong);
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-900 transition;
+    border-color: var(--brand-accent);
+    color: var(--brand-primary);
+  }
+  .btn-outline:hover {
+    border-color: var(--brand-primary);
+    color: var(--brand-primary);
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center rounded-full px-3 py-1 text-sm font-medium text-slate-700 hover:bg-slate-100;
+  }
+  .btn-ghost:hover {
+    background-color: var(--brand-accent-soft);
+  }
+  .btn-danger {
+    @apply inline-flex items-center justify-center rounded-full border border-red-200 px-3 py-1 text-sm font-medium text-red-600 hover:bg-red-50;
+  }
+  .card {
+    @apply rounded-2xl border border-slate-200 bg-white p-4 shadow-soft;
+  }
+  .input {
+    @apply w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm outline-none;
+  }
+  .input:focus {
+    border-color: var(--brand-primary);
+    box-shadow: 0 0 0 2px var(--brand-primary-soft);
+  }
+  .label {
+    @apply text-sm font-medium text-slate-700;
+  }
+  .pill {
+    @apply rounded-full border border-slate-200 px-3 py-1 text-sm;
+  }
+}
+
+@layer utilities {
+  .text-brand {
+    color: var(--brand-primary);
+  }
+  .bg-brand {
+    background-color: var(--brand-primary);
+  }
+  .border-brand {
+    border-color: var(--brand-primary);
+  }
+  .nav-link {
+    transition: color 150ms ease;
+  }
+  .nav-link:hover {
+    color: var(--brand-primary);
+  }
+}
+
+.panel-curtain {
+  transform: translateX(-100%);
+  transition: transform 680ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.panel-curtain[data-open="true"] {
+  transform: translateX(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .panel-curtain {
+    transition: none;
+  }
+}
+
+/* Toast notification */
+.toast {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(80px);
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.1rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: white;
+  background-color: var(--brand-primary);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  opacity: 0;
+  transition: transform 350ms cubic-bezier(0.22,1,0.36,1), opacity 350ms ease;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+/* Stock badges */
+.badge-oos {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.badge-in {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background-color: var(--brand-primary-soft);
+  color: var(--brand-primary-strong);
+}
+
+/* ── Responsive touch targets (mobile) ── */
+@media (max-width: 640px) {
+  .btn-primary,
+  .btn-outline,
+  .btn-ghost {
+    min-height: 44px;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+  .input,
+  select.input {
+    min-height: 44px;
+    font-size: 16px; /* prevents iOS zoom on focus */
+  }
+}
+
+/* ── Fluid product grid ── */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr));
+  gap: 1rem;
+}
+
+/* ── Responsive card padding ── */
+@media (max-width: 640px) {
+  .card {
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+}
+
+/* ── Large screen (>1280px) enhancements ── */
+@media (min-width: 1280px) {
+  .card {
+    padding: 1.75rem;
+  }
+}

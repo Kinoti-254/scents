@@ -1,0 +1,12 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="leaf" x1="24" y1="18" x2="100" y2="106" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1F6B4F"/>
+      <stop offset="1" stop-color="#16503B"/>
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="56" fill="url(#leaf)"/>
+  <circle cx="60" cy="60" r="43" fill="#F4EAD2"/>
+  <text x="60" y="71" text-anchor="middle" font-family="Georgia, serif" font-size="44" font-weight="700" fill="#1F6B4F">S</text>
+  <text x="60" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" letter-spacing="4" fill="#C7A14A">SFC</text>
+</svg>
