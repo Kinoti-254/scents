@@ -24,7 +24,10 @@ export default async function AdminHomePage() {
         Manage products, categories, and storefront content.
       </p>
       <div className="flex flex-wrap gap-3">
-        <Link href="/admin/products" className="btn-primary">
+        <Link href="/admin/orders" className="btn-primary">
+          View orders
+        </Link>
+        <Link href="/admin/products" className="btn-outline">
           Manage products
         </Link>
         <Link href="/admin/categories" className="btn-outline">
